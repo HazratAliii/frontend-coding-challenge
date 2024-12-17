@@ -1,5 +1,12 @@
 import { Products } from "@/views/products";
+import { Suspense } from "react";
 
-export default function ProductsRoot() {
-  return <Products />;
-}
+const ProductsRoot = () => {
+  return (
+    <Suspense fallback={<div>Loading</div>}>
+      <Products />
+    </Suspense>
+  );
+};
+
+export default ProductsRoot;
